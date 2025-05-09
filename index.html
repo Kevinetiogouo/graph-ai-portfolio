@@ -7,17 +7,16 @@
   <style>
     :root {
       /* Single deep “navy-green” palette */
-      --primary: #003b32;        /* Navy‑green */
-      --primary-dark: #002923;   /* Darker navy‑green */
-      --primary-light: #004c42;  /* Lighter navy‑green */
-      --text-light: #f1fefb;     /* Very light mint for contrast */
-      --accent: #1fa060;         /* Green accent */
-      --accent-dark: #15804b;    /* Darker accent */
+      --primary: #003b32;
+      --primary-dark: #002923;
+      --primary-light: #004c42;
+      --text-light: #f1fefb;
+      --accent: #1fa060;
+      --accent-dark: #15804b;
       --max-width: 900px;
       --radius: 10px;
     }
 
-    /* Base reset --------------------------------*/
     * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
 
     body {
@@ -38,7 +37,7 @@
 
     ul { list-style: disc; padding-left: 1.3rem; }
 
-    /* Header & Nav ------------------------------*/
+    /* Header & Nav */
     header {
       background: var(--primary-dark);
       padding: 18px 0;
@@ -55,7 +54,7 @@
     nav a { color: var(--text-light); padding: .35rem .6rem; border-radius: 4px; transition: background .25s ease, transform .25s ease; }
     nav a:hover { background: var(--accent-dark); transform: translateY(-2px); }
 
-    /* Section card -----------------------------*/
+    /* Sections */
     section {
       max-width: var(--max-width);
       margin: 2.5rem auto;
@@ -67,7 +66,7 @@
     section + section { margin-top: 3rem; }
     section p, section li { font-size: 1rem; margin-bottom: 1rem; }
 
-    /* Hero -------------------------------------*/
+    /* Hero */
     .hero {
       text-align: center;
       padding: 4rem 1rem;
@@ -79,31 +78,28 @@
     .hero h1 { font-size: 2rem; margin-bottom: .7rem; color: var(--accent); }
     .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
 
-    /* Weekly submissions list ------------------*/
-    #weekly-submissions ul.weeks {
-      display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
-      gap: .75rem;
-      list-style: none; padding-left: 0;
+    /* About Me layout */
+    .about-flex { display: flex; gap: 1.5rem; align-items: center; flex-wrap: wrap; }
+    .profile {
+      width: 140px; height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid var(--accent);
+      flex-shrink: 0;
     }
-    #weekly-submissions li {
-      background: var(--primary);
-      border-left: 4px solid var(--accent);
-      padding: .75rem 1rem;
-      border-radius: var(--radius);
-      font-weight: 500; font-size: .95rem;
-      transition: background .25s ease;
-      color: var(--text-light);
-    }
+
+    /* Weekly list */
+    #weekly-submissions ul.weeks { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: .75rem; list-style: none; padding-left: 0; }
+    #weekly-submissions li { background: var(--primary); border-left: 4px solid var(--accent); padding: .75rem 1rem; border-radius: var(--radius); font-weight: 500; font-size: .95rem; transition: background .25s ease; }
     #weekly-submissions li:hover { background: var(--primary-light); }
 
-    /* Footer -----------------------------------*/
+    /* Footer */
     footer { text-align: center; padding: 2rem 1rem 2.2rem; font-size: .9rem; color: #cfe6ff; }
 
-    /* Responsive tweaks -------------------------*/
     @media(max-width:640px){
       nav ul { justify-content: center; width: 100%; gap: .8rem; }
       section { margin: 2rem 1rem; padding: 1.7rem 1.2rem; }
+      .about-flex { flex-direction: column; text-align: center; }
     }
   </style>
 </head>
@@ -122,37 +118,40 @@
   <!-- Hero -->
   <section class="hero">
     <h1>Generative AI Portfolio</h1>
-    <p>Showcasing my journey through the <em>Generative AI for Work &amp; Research</em> course—applying no‑code AI tools to enhance productivity and scientific discovery.</p>
+    <p>Showcasing my journey through the <em>Generative AI for Work &amp; Research</em> course—applying no-code AI tools to enhance productivity and scientific discovery.</p>
   </section>
 
   <!-- About Me -->
   <section id="about-me">
     <h2>About Me</h2>
-    <p>I am an <strong>epidemiologist &amp; research data analyst</strong> at Fann University Hospital, Senegal. My expertise spans infectious‑disease research, community outreach and data‑intensive fieldwork. I design data‑collection frameworks, ensure rigorous data management, and perform statistical analysis in <abbr title="R programming language">R</abbr>. I also contribute to manuscript writing and scientific communication.</p>
+    <div class="about-flex">
+      <img src="https://github.com/Kevinetiogouo/graph-ai-portfolio/blob/main/WhatsApp%20Image%202025-05-09%20at%2022.10.58.jpeg?raw=true" alt="Kevine Tiogouo profile photo" class="profile" />
+      <p>I am an <strong>epidemiologist &amp; research data analyst</strong> at Fann University Hospital, Senegal. My expertise spans infectious-disease research, community outreach and data-intensive fieldwork. I design data-collection frameworks, ensure rigorous data management, and perform statistical analysis in <abbr title="R programming language">R</abbr>. I also contribute to manuscript writing and scientific communication.</p>
+    </div>
   </section>
 
   <!-- About the Course -->
   <section id="about-course">
     <h2>About the Course</h2>
-    <p><em>Generative AI for Work &amp; Research Productivity</em> is an eight‑week live online certification focused on practical <strong>no‑code AI tools for task automation</strong>.</p>
+    <p><em>Generative AI for Work &amp; Research Productivity</em> is an eight-week live online certification focused on practical <strong>no-code AI tools for task automation</strong>.</p>
     <ul>
       <li>Automate documents, spreadsheets &amp; data workflows</li>
       <li>Organise knowledge and conduct literature reviews</li>
-      <li>Build custom chatbots &amp; AI‑powered workflows</li>
+      <li>Build custom chatbots &amp; AI-powered workflows</li>
       <li>Create visuals and presentations with AI</li>
       <li>Apply skills in a capstone project</li>
     </ul>
-    <p style="margin-top:1rem"><strong>Next cohort:</strong> <time datetime="2025-05-09">9 May 2025</time> • <strong>Duration:</strong> 8 weeks<br />Workshops: Fridays 15:00 GMT or Sundays 17:00 GMT (online)</p>
+    <p style="margin-top:1rem"><strong>Next cohort:</strong> <time datetime="2025-05-09">9 May 2025</time> • <strong>Duration:</strong> 8 weeks<br />Workshops: Fridays 15:00 GMT or Sundays 17:00 GMT (online)</p>
   </section>
 
   <!-- Weekly Submissions -->
   <section id="weekly-submissions">
     <h2>My Weekly Submissions</h2>
     <ul class="weeks">
-      <li>Week 1</li>
-      <li>Week 2</li>
-      <li>Week 3</li>
-      <li>Week 4</li>
+      <li>Week 1</li>
+      <li>Week 2</li>
+      <li>Week 3</li>
+      <li>Week 4</li>
     </ul>
   </section>
 
