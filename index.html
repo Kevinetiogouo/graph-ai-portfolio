@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kevine Tiogouo – Generative AI Portfolio</title>
+  <style>
+    :root {
+      /* Single deep “navy-green” palette */
+      --primary: #003b32;        /* Navy‑green */
+      --primary-dark: #002923;   /* Darker navy‑green */
+      --primary-light: #004c42;  /* Lighter navy‑green */
+      --text-light: #f1fefb;     /* Very light mint for contrast */
+      --accent: #1fa060;         /* Green accent */
+      --accent-dark: #15804b;    /* Darker accent */
+      --max-width: 900px;
+      --radius: 10px;
+    }
+
+    /* Base reset --------------------------------*/
+    * { box-sizing: border-box; margin: 0; padding: 0; scroll-behavior: smooth; }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--primary);
+      color: var(--text-light);
+      line-height: 1.65;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--accent);
+      line-height: 1.3;
+    }
+
+    a { color: var(--accent); text-decoration: none; transition: color 0.25s ease; }
+    a:hover, a:focus-visible { color: var(--accent-dark); text-decoration: underline; }
+
+    ul { list-style: disc; padding-left: 1.3rem; }
+
+    /* Header & Nav ------------------------------*/
+    header {
+      background: var(--primary-dark);
+      padding: 18px 0;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 6px rgba(0,0,0,.3);
+    }
+    nav {
+      max-width: var(--max-width);
+      margin: 0 auto; padding: 0 1rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;
+    }
+    .logo { font-size: 1.3rem; font-weight: bold; color: var(--text-light); }
+    nav ul { display: flex; gap: 1rem; flex-wrap: wrap; }
+    nav a { color: var(--text-light); padding: .35rem .6rem; border-radius: 4px; transition: background .25s ease, transform .25s ease; }
+    nav a:hover { background: var(--accent-dark); transform: translateY(-2px); }
+
+    /* Section card -----------------------------*/
+    section {
+      max-width: var(--max-width);
+      margin: 2.5rem auto;
+      background: var(--primary-dark);
+      padding: 2rem 1.4rem;
+      border-radius: var(--radius);
+      box-shadow: 0 3px 12px rgba(0,0,0,.25);
+    }
+    section + section { margin-top: 3rem; }
+    section p, section li { font-size: 1rem; margin-bottom: 1rem; }
+
+    /* Hero -------------------------------------*/
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+      background: linear-gradient(135deg,var(--primary-light) 0%,var(--primary) 60%,var(--accent-dark) 100%);
+      border-radius: var(--radius);
+      box-shadow: 0 3px 12px rgba(0,0,0,.25);
+      max-width: var(--max-width); margin: 2.5rem auto 3rem;
+    }
+    .hero h1 { font-size: 2rem; margin-bottom: .7rem; color: var(--accent); }
+    .hero p { font-size: 1.1rem; max-width: 700px; margin: 0 auto; }
+
+    /* Weekly submissions list ------------------*/
+    #weekly-submissions ul.weeks {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+      gap: .75rem;
+      list-style: none; padding-left: 0;
+    }
+    #weekly-submissions li {
+      background: var(--primary);
+      border-left: 4px solid var(--accent);
+      padding: .75rem 1rem;
+      border-radius: var(--radius);
+      font-weight: 500; font-size: .95rem;
+      transition: background .25s ease;
+      color: var(--text-light);
+    }
+    #weekly-submissions li:hover { background: var(--primary-light); }
+
+    /* Footer -----------------------------------*/
+    footer { text-align: center; padding: 2rem 1rem 2.2rem; font-size: .9rem; color: #cfe6ff; }
+
+    /* Responsive tweaks -------------------------*/
+    @media(max-width:640px){
+      nav ul { justify-content: center; width: 100%; gap: .8rem; }
+      section { margin: 2rem 1rem; padding: 1.7rem 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">Kevine Tiogouo Tezemene</div>
+      <ul>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#about-course">About the Course</a></li>
+        <li><a href="#weekly-submissions">Weekly Submissions</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <h1>Generative AI Portfolio</h1>
+    <p>Showcasing my journey through the <em>Generative AI for Work &amp; Research</em> course—applying no‑code AI tools to enhance productivity and scientific discovery.</p>
+  </section>
+
+  <!-- About Me -->
+  <section id="about-me">
+    <h2>About Me</h2>
+    <p>I am an <strong>epidemiologist &amp; research data analyst</strong> at Fann University Hospital, Senegal. My expertise spans infectious‑disease research, community outreach and data‑intensive fieldwork. I design data‑collection frameworks, ensure rigorous data management, and perform statistical analysis in <abbr title="R programming language">R</abbr>. I also contribute to manuscript writing and scientific communication.</p>
+  </section>
+
+  <!-- About the Course -->
+  <section id="about-course">
+    <h2>About the Course</h2>
+    <p><em>Generative AI for Work &amp; Research Productivity</em> is an eight‑week live online certification focused on practical <strong>no‑code AI tools for task automation</strong>.</p>
+    <ul>
+      <li>Automate documents, spreadsheets &amp; data workflows</li>
+      <li>Organise knowledge and conduct literature reviews</li>
+      <li>Build custom chatbots &amp; AI‑powered workflows</li>
+      <li>Create visuals and presentations with AI</li>
+      <li>Apply skills in a capstone project</li>
+    </ul>
+    <p style="margin-top:1rem"><strong>Next cohort:</strong> <time datetime="2025-05-09">9 May 2025</time> • <strong>Duration:</strong> 8 weeks<br />Workshops: Fridays 15:00 GMT or Sundays 17:00 GMT (online)</p>
+  </section>
+
+  <!-- Weekly Submissions -->
+  <section id="weekly-submissions">
+    <h2>My Weekly Submissions</h2>
+    <ul class="weeks">
+      <li>Week 1</li>
+      <li>Week 2</li>
+      <li>Week 3</li>
+      <li>Week 4</li>
+    </ul>
+  </section>
+
+  <!-- Footer -->
+  <footer>&copy; <span id="year"></span> Kevine Tiogouo — Generative AI Portfolio</footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
