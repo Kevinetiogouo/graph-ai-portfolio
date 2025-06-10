@@ -1,163 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kevine Tiogouo – Portfolio</title>
   <style>
-    /* ===== Midnight Neon Theme ===== */
+    /* === Midnight Neon Theme === */
     :root {
-      --bg: #1b1d24;            /* charcoal */
-      --surface: #232530;       /* slightly lighter card/nav */
-      --accent: #00e0ff;        /* neon cyan */
-      --accent-dark: #03b2ce;   /* cyan dark */
-      --accent-light: #72f2ff;  /* light cyan */
-      --text: #f0f1f6;          /* near‑white text */
-      --muted: #9aa0b3;         /* muted grey */
+      --bg: #1b1d24;          /* charcoal */
+      --surface: #232530;     /* card/nav */
+      --accent: #00e0ff;      /* neon cyan */
+      --accent-dark: #03b2ce; /* darker cyan */
+      --accent-light: #72f2ff;/* light cyan */
+      --text: #f0f1f6;        /* near white */
+      --muted: #9aa0b3;       /* grey */
       --radius: 12px;
       --max-width: 1080px;
     }
 
-    /* --------- RESET --------- */
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:'Helvetica Neue',Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
     a{color:var(--accent);text-decoration:none}
     a:hover{color:var(--accent-light)}
 
-    /* --------- NAV --------- */
+    /* NAV */
     header{background:transparent;padding:1rem 0}
     nav{max-width:var(--max-width);margin:0 auto;padding:0 1.2rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1rem}
     .logo{font-weight:700;font-size:1.35rem;color:var(--accent)}
     nav ul{display:flex;gap:1.1rem;list-style:none}
-    nav a{padding:.35rem .6rem;border-radius:6px;color:var(--muted);transition:color .25s ease}
+    nav a{padding:.35rem .7rem;border-radius:6px;color:var(--muted);transition:color .25s ease}
     nav a:hover{color:var(--accent)}
 
-    /* --------- ABOUT SPLIT --------- */
-    /* --- About grid: align image & text closer --- */
-    /* --- Center avatar & about text vertically --- */
-    .about-split{
-      max-width:var(--max-width);
-      margin:3rem auto;
-      background:var(--surface);
-      border-radius:var(--radius);
-      display:grid;
-      grid-template-columns:220px 1fr;
-      column-gap:.6rem;
-      align-items:center; /* <— new */
-      overflow:hidden;
-      box-shadow:0 6px 16px rgba(0,0,0,.45);
-    }
-    /* --- End about grid --- */
-    .about-split{max-width:var(--max-width);margin:3rem auto;background:var(--surface);border-radius:var(--radius);display:grid;grid-template-columns:240px 1fr;column-gap:.5rem;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.45)}
-    /* --- Updated: smaller margin left --- */
-    .about-img{
-      width:220px;
-      height:220px;
-      border-radius:50%;
-      object-fit:cover;
-      object-position:center center;
-      display:block;
-      margin:0; /* no extra spacing */
-      border:4px solid var(--accent);
-    }height:240px;border-radius:50%;object-fit:cover;object-position:center center;display:block;margin:1rem 0 1rem .5rem;border:4px solid var(--accent);}
-    .about-content{padding:2rem 1.75rem;display:flex;flex-direction:column;justify-content:center;gap:1rem}
-    .about-content h2{color:var(--accent-light);font-size:1.9rem;font-weight:700}
-    .about-content p{color:var(--muted)}
-    /* --- Adjusted button dimensions: shorter width & height --- */
-    /* --- Updated button: shorter height, restored width --- */
-    /* --- Cleaned button style: shorter height, auto width --- */
-    .btn-primary{
-      display:inline-block;
-      background:var(--accent);
-      color:#000;
-      border:none;
-      padding:.25rem 1.2rem; /* slim height */
-      border-radius:var(--radius);
-      font-weight:600;
-      font-size:.9rem;
-      cursor:pointer;
-      transition:transform .25s ease;
-      width:auto;           /* content‑based width */
-      max-width:none;
-      text-align:center;
-      align-self:flex-start;
-    }
-    /* --- End button clean‑up --- */
-    .btn-primary{align-self:flex-start;display:inline-block;background:var(--accent);color:#000;border:none;padding:.25rem 1.3rem;border-radius:var(--radius);font-weight:600;font-size:.9rem;cursor:pointer;transition:transform .25s ease;max-width:300px;text-align:center}
-    /* --- End update --- */
-    /* --- End update --- */
-    /* --- End adjustment --- */
-    .btn-primary:hover{transform:translateY(-3px)}
+    /* ABOUT */
+    .about-split{max-width:var(--max-width);margin:3rem auto;background:var(--surface);border-radius:var(--radius);display:grid;grid-template-columns:220px 1fr;column-gap:.6rem;align-items:center;box-shadow:0 6px 16px rgba(0,0,0,.45)}
+    .avatar-wrap{width:220px;height:220px;margin:.5rem;position:relative}
+    .about-img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:4px solid var(--accent)}
+    .about-content{padding:1.8rem 1.5rem}
+    .about-content h2{color:var(--accent-light);font-size:1.9rem;font-weight:700;margin-bottom:.5rem}
+    .about-content p{color:var(--muted);margin-bottom:1rem}
+    .btn-primary{display:inline-block;background:var(--accent);color:#000;padding:.35rem 1.2rem;border-radius:var(--radius);font-weight:600;font-size:.9rem;transition:background .25s ease}
+    .btn-primary:hover{background:var(--accent-dark)}
 
-    /* --------- COURSE --------- */
+    /* COURSE */
     .course-wrapper{max-width:var(--max-width);margin:3rem auto;padding:0 1rem}
-    .course-wrapper h2{color:var(--accent-light);margin-bottom:1rem;text-align:left;font-size:1.6rem}
+    .course-wrapper h2{color:var(--accent-light);margin-bottom:1rem;font-size:1.6rem}
     .course-wrapper p{color:var(--muted);margin-bottom:1rem}
-    .course-wrapper ul{list-style:none;color:var(--muted);line-height:1.6;margin-left:0}
-    .course-wrapper li{position:relative;padding-left:2rem;margin-bottom:.6rem;font-size:.95rem}
-    .course-wrapper li::before{content:"✔";position:absolute;left:0;top:0;color:var(--accent);font-weight:700}
+    .course-wrapper ul{list-style:none;margin-left:0}
+    .course-wrapper li{position:relative;padding-left:1.8rem;margin-bottom:.6rem;color:var(--muted)}
+    .course-wrapper li::before{content:'✔';position:absolute;left:0;top:0;color:var(--accent);font-weight:700}
 
-    /* --------- WEEKS --------- */
+    /* WEEKS */
     .weeks-wrapper{max-width:var(--max-width);margin:3rem auto;padding:0 1rem}
     .weeks-grid{margin-top:1.5rem;display:grid;gap:1.2rem;grid-template-columns:repeat(4,1fr)}
     .week-card{background:var(--surface);border:1px solid #2e3140;border-radius:var(--radius);padding:.8rem .8rem;box-shadow:0 4px 12px rgba(0,0,0,.4);transition:transform .25s ease,box-shadow .25s ease}
-    .week-card:hover{transform:translateY(-5px);box-shadow:0 6px 18px rgba(0,0,0,.6)}
+    .week-card:hover{transform:translateY(-4px);box-shadow:0 6px 18px rgba(0,0,0,.6)}
     .week-card h3{color:var(--accent);font-size:1.05rem;margin-bottom:.3rem;text-align:center}
     .week-card p{font-size:.75rem;color:var(--text);text-align:center}
-    .week-card p a{color:var(--accent);text-decoration:none}
-    .week-card p a:hover{text-decoration:underline;color:var(--accent-light)}
+    .week-card p a{color:var(--accent)}
+    .week-card p a:hover{color:var(--accent-light);text-decoration:underline}
 
     footer{text-align:center;padding:2rem 1rem 2.5rem;font-size:.9rem;color:var(--muted)}
-    @media(max-width:500px){.about-content{padding:1.8rem 1.2rem}.about-img{max-height:260px}.weeks-grid{grid-template-columns:repeat(2,1fr)}}
-  .avatar-wrap{position:relative;width:220px;height:220px;margin:1rem 0 1rem .5rem;flex-shrink:0}
-    /* subtle background blur halo */
-    .avatar-wrap::before{
-      content:'';
-      position:absolute;
-      inset:0;
-      border-radius:50%;
-      background:radial-gradient(circle,var(--accent-dark) 0%, transparent 70%);
-      filter:blur(18px);
-      z-index:-1;
-    }
+    @media(max-width:600px){.weeks-grid{grid-template-columns:repeat(2,1fr)}}
   </style>
 </head>
 <body>
   <header>
     <nav>
-      <div class="logo">Kevine&nbsp;Tiogouo</div>
+      <div class="logo">Kevine Tiogouo</div>
       <ul>
         <li><a href="#about">About</a></li>
         <li><a href="#course">Course</a></li>
         <li><a href="#weeks">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
   </header>
 
-  <!-- ABOUT SECTION -->
+  <!-- ABOUT -->
   <section id="about" class="about-split">
-    <div class="avatar-wrap"><img class="about-img" src="https://github.com/Kevinetiogouo/graph-ai-portfolio/blob/main/WhatsApp%20Image%202025-05-12%20at%2012.10.07.jpeg?raw=true" alt="Kevine Tiogouo portrait" /></div>
+    <div class="avatar-wrap"><img class="about-img" src="https://github.com/Kevinetiogouo/graph-ai-portfolio/blob/main/WhatsApp%20Image%202025-05-12%20at%2012.10.07.jpeg?raw=true" alt="Kevine Tiogouo portrait"></div>
     <div class="about-content">
       <h2>About Me</h2>
-      <p>Passionate epidemiologist with a focus on public‑health research and data science. I ensure rigorous data management and analysis in R&nbsp;Studio and craft evidence‑based insights that improve health outcomes.</p>
+      <p>Passionate epidemiologist with a focus on public‑health research and data science. I ensure rigorous data management and analysis in R Studio and craft evidence‑based insights that improve health outcomes.</p>
       <a href="https://drive.google.com/file/d/1330RAr2p2I-R-KtKeRZ_QRRFd89308lB/view?usp=sharing" class="btn-primary" download>Download CV</a>
     </div>
   </section>
 
-  <!-- COURSE SECTION -->
+  <!-- COURSE -->
   <section id="course" class="course-wrapper">
-    <h2>Generative AI for Work &amp; Research Productivity</h2>
-    <p>An eight‑week live online certification where I’m mastering no‑code AI tools to streamline data, docs, and research workflows.</p>
+    <h2>Generative AI for Work & Research Productivity</h2>
+    <p>An eight‑week live online certification where I’m mastering no‑code AI tools to streamline data, documents, and research workflows.</p>
     <ul>
-      <li>Automate documents, spreadsheets &amp; data workflows</li>
+      <li>Automate documents, spreadsheets & data workflows</li>
       <li>Organise knowledge and conduct literature reviews</li>
-      <li>Build custom chatbots &amp; AI‑powered flows</li>
+      <li>Build custom chatbots & AI‑powered flows</li>
       <li>Create visuals and presentations with AI</li>
       <li>Complete a hands‑on capstone project</li>
     </ul>
   </section>
 
-  <!-- WEEKS SECTION -->
+  <!-- WEEKS -->
   <section id="weeks" class="weeks-wrapper">
     <h2 style="color:var(--accent-light);text-align:center;margin-bottom:.8rem">My Weekly Submissions</h2>
     <p style="color:var(--muted);text-align:center;margin-bottom:1.2rem">Links to my weekly submission will appear here as the course progresses.</p>
@@ -166,16 +108,22 @@
       <div class="week-card"><h3>Week 2</h3><p><a href="https://kevinetiogouo.github.io/graph-ai-portfolio/gapminder.html" target="_blank" rel="noopener">AI‑assisted Gapminder analysis: TB vs BCG</a></p></div>
       <div class="week-card"><h3>Week 3</h3><p><a href="https://kevinetiogouo.github.io/graph-ai-portfolio/job_analysis_report.html" target="_blank" rel="noopener">Job market analysis with LLM APIs</a></p></div>
       <div class="week-card"><h3>Week 4</h3><p>Chatbot creation</p></div>
-      <div class="week-card"><h3>Week 5</h3><p>Coming soon</p></div>
+      <div class="week-card"><h3>Week 5</h3><p>LLM Automation with Make.com</p></div>
       <div class="week-card"><h3>Week 6</h3><p>Coming soon</p></div>
       <div class="week-card"><h3>Week 7</h3><p>Coming soon</p></div>
       <div class="week-card"><h3>Week 8</h3><p>Coming soon</p></div>
     </div>
   </section>
 
+  <!-- CONTACT FORM -->
+  <section id="contact" class="course-wrapper" style="margin-top:2rem;">
+    <h2 style="color:var(--accent);margin-bottom:1rem;text-align:left">Contact for Consultation</h2>
+    <a href="https://docs.google.com/forms/d/e/1FAIpQLSfbejkPeDqlX_bBTlg4_8EeS69ARoTOwNUohw2QTzfLIdke7w/viewform" target="_blank" rel="noopener" class="btn-primary">Open Consultation Form</a>
+  </section>
+
   <footer>&copy; <span id="year"></span> Kevine Tiogouo — Portfolio</footer>
   <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
-<script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
+  <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
 <script src="https://files.bpcontent.cloud/2025/06/04/15/20250604155520-WMYB10SK.js"></script>
 </body>
 </html>
