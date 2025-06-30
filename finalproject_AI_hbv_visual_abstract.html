@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Life Satisfaction in People Living with Hepatitis B in Senegal</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .visual-abstract {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e3a5f 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            line-height: 1.3;
+        }
+        
+        .authors {
+            font-size: 14px;
+            opacity: 0.9;
+            margin-bottom: 10px;
+        }
+        
+        .journal-info {
+            font-size: 12px;
+            opacity: 0.8;
+            font-style: italic;
+        }
+        
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            padding: 40px;
+        }
+        
+        .left-column, .right-column {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .section {
+            background: #f8f9fa;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #2c5aa0;
+        }
+        
+        .section-title {
+            font-size: 16px;
+            font-weight: bold;
+            color: #2c5aa0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .icon {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .study-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 10px;
+        }
+        
+        .stat-box {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+        
+        .findings-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 10px;
+        }
+        
+        .finding-item {
+            background: white;
+            padding: 12px;
+            border-radius: 6px;
+            font-size: 13px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .positive {
+            border-left: 3px solid #28a745;
+        }
+        
+        .negative {
+            border-left: 3px solid #dc3545;
+        }
+        
+        .neutral {
+            border-left: 3px solid #ffc107;
+        }
+        
+        .satisfaction-meter {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        
+        .meter-container {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin: 20px auto;
+        }
+        
+        .meter-bg {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            background: conic-gradient(from 0deg, #dc3545 0deg 144deg, #ffc107 144deg 216deg, #28a745 216deg 360deg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .meter-inner {
+            width: 140px;
+            height: 140px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .score {
+            font-size: 32px;
+            font-weight: bold;
+            color: #2c5aa0;
+        }
+        
+        .score-label {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 11px;
+            color: #666;
+        }
+        
+        .conclusion {
+            grid-column: 1 / -1;
+            background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+            border-radius: 8px;
+            padding: 25px;
+            border-left: 4px solid #2196f3;
+        }
+        
+        .conclusion-text {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #1565c0;
+        }
+        
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                padding: 20px;
+            }
+            
+            .title {
+                font-size: 22px;
+            }
+            
+            .findings-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="visual-abstract">
+        <div class="header">
+            <div class="title">Life Satisfaction in People Living with Hepatitis B in Senegal: A Cross-Sectional Study</div>
+            <div class="authors">Tiogouo KT, Ndione GA, Diedhiou M, et al. for SEN-B</div>
+            <div class="journal-info">PLOS Global Public Health • Cross-sectional study • May 2024 - January 2025</div>
+        </div>
+        
+        <div class="main-content">
+            <div class="left-column">
+                <div class="section">
+                    <div class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2C13.1 2 14 2.9 14 4C14 5.1 13.1 6 12 6C10.9 6 10 5.1 10 4C10 2.9 10.9 2 12 2ZM21 9V7L15 7V9C15 9.55 14.55 10 14 10H13V8.5C13 7.67 12.33 7 11.5 7H10.5C9.67 7 9 7.67 9 8.5V16H11V11H13V22H15V16H18C19.1 16 20 15.1 20 14V12H22V10H21C21 9.45 20.55 9 20 9H21Z"/>
+                        </svg>
+                        Study Population
+                    </div>
+                    <div class="study-stats">
+                        <div class="stat-box">
+                            <div class="stat-number">579</div>
+                            <div class="stat-label">Participants</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">31</div>
+                            <div class="stat-label">Median Age</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">50.9%</div>
+                            <div class="stat-label">Male</div>
+                        </div>
+                        <div class="stat-box">
+                            <div class="stat-number">31.1%</div>
+                            <div class="stat-label">On Treatment</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M9,11H15L13.5,7.5L9,11M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4Z"/>
+                        </svg>
+                        Life Satisfaction Score
+                    </div>
+                    <div class="satisfaction-meter">
+                        <div class="meter-container">
+                            <div class="meter-bg">
+                                <div class="meter-inner">
+                                    <div class="score">6.43</div>
+                                    <div class="score-label">Mean Score</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="scale-labels">
+                            <span>Low (1-4)</span>
+                            <span>Average (5-6)</span>
+                            <span>High (7-10)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="right-column">
+                <div class="section">
+                    <div class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12,17.27L18.18,21L16.54,13.97L22,9.24L14.81,8.62L12,2L9.19,8.62L2,9.24L7.46,13.97L5.82,21L12,17.27Z"/>
+                        </svg>
+                        Key Predictors
+                    </div>
+                    <div style="margin-bottom: 15px;">
+                        <h4 style="color: #28a745; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 5px;">
+                            <span style="width: 8px; height: 8px; background: #28a745; border-radius: 50%;"></span>
+                            Positive Predictors
+                        </h4>
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                            <div class="finding-item positive">
+                                <strong>Age >60:</strong> β=1.31 (p=0.01)
+                            </div>
+                            <div class="finding-item positive">
+                                <strong>Higher Education:</strong> β=0.36 (p=0.031)
+                            </div>
+                            <div class="finding-item positive">
+                                <strong>Employment:</strong> β=0.57 (p=0.03)
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 style="color: #dc3545; font-size: 14px; margin-bottom: 8px; display: flex; align-items: center; gap: 5px;">
+                            <span style="width: 8px; height: 8px; background: #dc3545; border-radius: 50%;"></span>
+                            Negative Predictors
+                        </h4>
+                        <div style="display: flex; flex-direction: column; gap: 6px;">
+                            <div class="finding-item negative">
+                                <strong>Poor Mental Health:</strong> β=-0.93 (p<0.001)
+                            </div>
+                            <div class="finding-item negative">
+                                <strong>Physical Disability:</strong> β=-0.36 (p=0.01)
+                            </div>
+                        </div>
+                    </div>
+                    <div style="margin-top: 12px; padding: 10px; background: #fff3cd; border-radius: 4px; border-left: 3px solid #ffc107;">
+                        <span style="font-size: 12px; color: #856404;">
+                            <strong>Note:</strong> Antiviral treatment showed no significant association with life satisfaction (p=0.33)
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="section">
+                    <div class="section-title">
+                        <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M16,18H18V16H16M12,18H14V16H12M16,14H18V12H16M12,14H14V12H12M16,10H18V8H16M12,10H14V8H12M10,18H11V16H10M10,14H11V12H10M10,10H11V8H10M10,6H11V4H10M6,10H8V8H6M6,6H8V4H6M6,14H8V12H6M6,18H8V16H6M4,22H20V20H4M20,2H4V4H20"/>
+                        </svg>
+                        Treatment vs Non-Treatment
+                    </div>
+                    <div style="font-size: 13px; line-height: 1.5;">
+                        <p><strong>Treated participants:</strong></p>
+                        <ul style="margin: 8px 0 15px 20px;">
+                            <li>87.8% reported "excellent living conditions"</li>
+                            <li>Parenthood increased satisfaction (β=0.80, p=0.04)</li>
+                        </ul>
+                        <p><strong>Untreated participants:</strong></p>
+                        <ul style="margin: 8px 0 0 20px;">
+                            <li>79.9% reported "excellent living conditions"</li>
+                            <li>Social support more beneficial (β=0.57, p=0.01)</li>
+                            <li>Greater impact from physical disability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="conclusion">
+                <div class="section-title" style="color: #1565c0;">
+                    <svg class="icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z"/>
+                    </svg>
+                    Clinical Implications
+                </div>
+                <div class="conclusion-text">
+                    Senegalese people living with hepatitis B demonstrated moderate life satisfaction primarily influenced by socioeconomic and health status factors rather than treatment status. The findings emphasize the critical need for integrated biopsychosocial care models that address mental health, social support, and socioeconomic factors as treatment access expands across Africa under new WHO guidelines.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
